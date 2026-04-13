@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Opening...</title>
+</head>
+<body>
+
+<script>
+const sites = [
+    "https://chatgpt.com/",
+    "https://yuanbao.tencent.com/chat/naQivTmsDa",
+    "https://www.qianwen.com",
+    "https://grok.com",
+    "https://gemini.google.com/app",
+    "https://www.kimi.com"
+];
+
+const prompt = localStorage.getItem("prompt") || "";
+
+// 复制到剪贴板
+navigator.clipboard.writeText(prompt);
+
+// 延迟逐个打开（关键）
+sites.forEach((url, i) => {
+    setTimeout(() => {
+        window.open(url, "_blank");
+    }, i * 500);
+});
+</script>
+
+<h2>Opening AI tools... 🚀</h2>
+
+</body>
+</html>
